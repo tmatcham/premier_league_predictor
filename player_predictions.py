@@ -128,3 +128,5 @@ players2.columns[:20]
 players2['type']
 players2['code']
 players2['element_type'].head()
+
+#Push?
