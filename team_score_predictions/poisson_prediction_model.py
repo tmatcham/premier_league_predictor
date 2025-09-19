@@ -11,14 +11,14 @@ test_years = [23,24]
 df_train = None
 for year in train_years:
     df = get_team_data.get_team_data(year)
-    df = process_team_data_year(df)
+    df = process_team_data_year(df, 1)
     df_train = pd.concat([df_train, df])
 # want to prepare the data
 
 df_test = None
 for year in test_years:
     df = get_team_data.get_team_data(year)
-    df = process_team_data_year(df)
+    df = process_team_data_year(df, 1)
     df_test = pd.concat([df_test, df])
 
 import statsmodels.api as sm
@@ -67,7 +67,4 @@ for i in range(2):
         plt.hist(y1s_ind)
         plt.plot(range(10), pmf)
 
-
 # Fit looks good.
-
-#Let's make predictions for the current season based on the available data.
